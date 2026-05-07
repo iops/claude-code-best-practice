@@ -480,25 +480,17 @@
     <!-- SLIDE 10: How LLMs Generate Text — Autoregressive Loop       -->
     <!-- ============================================================ -->
     <div class="slide" data-slide="10">
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 120px); text-align: center; gap: 0;">
-
-            <!-- Title -->
-            <h1 style="border-bottom: none; padding-bottom: 0; font-size: 2.6rem; margin-bottom: 28px;">One token at a time</h1>
-
-            <!-- Animated SVG -->
-            <figure style="max-width: 860px; width: 100%; margin: 0 auto;">
-                <img
-                    src="../assets/llm/llm-basic.svg"
-                    alt="Animated diagram showing autoregressive generation: prompt feeds into LLM, which predicts one token, feeds it back, and repeats until the full answer is produced."
-                    style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);"
-                />
-                <figcaption style="margin-top: 20px; font-size: 1rem; color: #555; font-style: italic; line-height: 1.5;">
-                    <strong style="font-style: normal; color: #1a1a1a;">The model produces one token per inference, feeding each result back as new input.</strong><br/>
-                    This is why streaming feels gradual &mdash; and why longer outputs cost more in both latency and API spend.
-                </figcaption>
-            </figure>
-
-        </div>
+        <h1>How an LLM generates text (autoregressive)</h1>
+        <figure style="max-width: 1100px; width: 100%; margin: 24px auto 0;">
+            <img
+                src="../assets/llm/llm-basic.svg"
+                alt="Animated diagram showing autoregressive generation: prompt feeds into LLM, which predicts one token, feeds it back, and repeats until the full answer is produced."
+                style="width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.10);"
+            />
+            <figcaption style="margin-top: 16px; font-size: 1.1rem; color: #1a1a1a; font-weight: 600; text-align: center;">
+                Each predicted token is appended to the input, then fed back into the LLM.
+            </figcaption>
+        </figure>
     </div>
 
     <!-- ============================================================ -->
