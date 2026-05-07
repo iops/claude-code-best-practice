@@ -21,7 +21,6 @@ Follow the guide for your OS, then come back here for authentication.
 After following your OS-specific guide, confirm everything is working:
 
 ```bash
-node --version    # Should show v18.x or higher
 claude --version  # Should show the installed Claude Code version
 ```
 
