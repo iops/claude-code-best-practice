@@ -200,9 +200,31 @@ Now when you ask Claude about any library ("how do I use React hooks?"), it can 
 
 ## Part 4: Development Workflows
 
+### The Foundational Workflow: Explore → Plan → Code → Commit
+
+Before any of the more elaborate workflows below, there's the **base pattern** every Claude Code workflow extends — Anthropic's official four-phase methodology:
+
+```
+EXPLORE   →   PLAN   →   CODE   →   COMMIT
+(read)        (design)   (do)       (capture)
+```
+
+| Phase | What you do | How you trigger it |
+|-------|-------------|--------------------|
+| **Explore** | Ask Claude to read files / research — *no edits yet* | "Read X, don't write code" or use the `Explore` subagent |
+| **Plan** | Get a written approach to critique before any code is touched | `Shift+Tab` twice to enter Plan Mode, or `/ultraplan` |
+| **Code** | Execute the approved plan | Exit Plan Mode after reviewing the plan |
+| **Commit** | Capture the change in focused, reviewable commits | One commit per logical change (or per file, per project rules) |
+
+**Why this matters:** The most expensive Claude mistakes happen when you skip Explore and Plan. Reviewing a 200-line diff is much harder than reviewing a 5-line plan. Catching the misunderstanding *before* code exists is the entire point.
+
+Full reference: [Explore → Plan → Code → Commit](../../best-practice/claude-explore-plan-code-commit.md).
+
+The workflows below are all **specializations** of this base pattern.
+
 ### The RPI Workflow (Research → Plan → Implement)
 
-This repository includes a complete development workflow called RPI:
+RPI is essentially Explore → Plan → Code → Commit with Explore renamed to Research and Code+Commit collapsed into Implement — plus dedicated specialist agents per phase. This repository ships RPI as a complete workflow:
 
 ```
 /rpi:research   → Agent researches the problem, gathers context
@@ -233,7 +255,7 @@ Using multiple models catches blind spots — one model reviews another's work.
 
 | Your task | Recommended workflow |
 |-----------|---------------------|
-| Small bug fix | No workflow needed — just ask |
+| Small bug fix | Explore → Plan → Code → Commit (the base pattern, lightweight) |
 | New feature | RPI (research first, then plan, then build) |
 | Large refactor | Agent teams (parallel work) |
 | Recurring report | Scheduled task |
@@ -313,7 +335,7 @@ You've completed the Zero to Hero journey when you can:
 - [ ] Explain agent teams and when parallel sessions make sense
 - [ ] Use `/loop` or `/schedule` to create a recurring task
 - [ ] Configure an MCP server in `.mcp.json`
-- [ ] Describe the RPI workflow (Research → Plan → Implement)
+- [ ] Describe the foundational Explore → Plan → Code → Commit workflow and how RPI extends it
 - [ ] Choose the right pattern for a given task size/complexity
 - [ ] Explain the full stack: CLAUDE.md → Commands → Skills → Agents → Hooks → Orchestration
 
@@ -324,6 +346,7 @@ You've completed the Zero to Hero journey when you can:
 - [Agent Teams Implementation](../../implementation/claude-agent-teams-implementation.md) — full coordination patterns
 - [Scheduled Tasks](../../implementation/claude-scheduled-tasks-implementation.md) — recurring task setup
 - [MCP Reference](../../best-practice/claude-mcp.md) — all MCP configuration options
+- [Explore → Plan → Code → Commit](../../best-practice/claude-explore-plan-code-commit.md) — Anthropic's foundational workflow that all others extend
 - [RPI Workflow](../../development-workflows/rpi/rpi-workflow.md) — complete workflow with 8 specialized agents
 - [Cross-Model Workflow](../../development-workflows/cross-model-workflow/cross-model-workflow.md) — multi-model validation
 - [Settings Reference](../../best-practice/claude-settings.md) — 60+ settings, permissions, sandbox config
