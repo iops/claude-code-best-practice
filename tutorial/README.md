@@ -44,6 +44,25 @@ By the end, you'll understand not just *how* to build this, but *when* to use ea
 
 ---
 
+## The Methodology Behind Every Level
+
+While each level teaches you *what* to build, this guide also reinforces *how* to work with Claude — Anthropic's foundational four-phase workflow:
+
+```
+Explore  →  Plan  →  Code  →  Commit
+(read)     (design)  (do)     (capture)
+```
+
+You'll see this pattern recur throughout the tutorial:
+- **Explore** — Asking Claude to read files or research before suggesting changes (Levels 1–2)
+- **Plan** — Plan Mode (`Shift+Tab` twice) and reviewing approaches before edits (Level 2 onwards)
+- **Code** — The actual edits, made *after* the plan is approved (Levels 4–7)
+- **Commit** — Capturing the change cleanly, one focused commit per file (Level 7+)
+
+The single biggest mistake new users make is skipping Explore and Plan, then being surprised when Claude edits the wrong file or builds the wrong thing. The disciplined pattern is what turns Claude from a clever autocomplete into a reliable collaborator. Full reference: [Explore → Plan → Code → Commit](../best-practice/claude-explore-plan-code-commit.md).
+
+---
+
 ## How to Use This Guide
 
 1. **Go in order.** Each level assumes you completed the previous one.
