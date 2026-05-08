@@ -4,6 +4,19 @@
 
 ---
 
+"Your most expensive failure mode is this: Shipping the wrong thing, well. Claude Code will cheerfully implement whatever you describe. It won't stop to ask whose problem you're solving."
+
+Audit your existing CLAUDE.md if you have one. For every rule: would Claude make this mistake without it? If not, delete it.
+
+Add your stack-specific layer — build commands, test runner, key file paths, naming conventions. Keep total under 150 lines.
+
+Pair with hooks for any rule that needs to fire 100% of the time.
+
+Revisit in 30 days. The best CLAUDE.md files get shorter over time as you delete rules that turn out to be unnecessary.
+
+---
+
+
 ## What You'll Learn
 
 - How to give Claude persistent instructions that survive between sessions
@@ -54,11 +67,24 @@ That's it. A text file with instructions. Claude will follow these rules for eve
 Put `CLAUDE.md` in the **root of your project** — the top-level folder where you run `claude`:
 
 ```
+~/.claude/               ← Personal global rules (optional)
+  CLAUDE.md              ← Your personal default rules (optional)
+```
+
+```
 my-project/
   CLAUDE.md          ← Claude reads this automatically
   src/
   docs/
   ...
+```
+
+```
+projects/
+  project-a/
+    CLAUDE.md        ← Claude reads this when you run `claude` here
+  project-b/
+    CLAUDE.md        ← Claude reads this when you run `claude` here
 ```
 
 ---
@@ -125,10 +151,10 @@ The `---` block at the top is called **frontmatter** (think of it as metadata ab
 Claude Code looks for instructions in multiple places, in this order:
 
 ```
-1. CLAUDE.md in your project root         (always loaded)
-2. .claude/rules/*.md files               (loaded based on paths: filter)
-3. CLAUDE.md in parent folders            (if your project is inside another project)
-4. ~/.claude/CLAUDE.md                    (your personal global rules)
+1. ~/.claude/CLAUDE.md                    (your personal global rules)
+2. CLAUDE.md in parent folders            (if your project is inside another project)
+3. CLAUDE.md in your project root         (always loaded)
+4. .claude/rules/*.md files               (loaded based on paths: filter)
 ```
 
 Rules higher in the list take priority. This means:
