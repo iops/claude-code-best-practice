@@ -99,7 +99,7 @@ claude
 
 ## ⚙️ DEVELOPMENT WORKFLOWS
 
-All major workflows converge on the same architectural pattern: **Research → Plan → Execute → Review → Ship**
+All major workflows converge on the same architectural pattern: **Research → Plan → Execute → Review → Ship** — a generalization of Anthropic's foundational [**Explore → Plan → Code → Commit**](best-practice/claude-explore-plan-code-commit.md) [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-explore-plan-code-commit.md) workflow. For a side-by-side analysis of how the top three differ and how to combine the best moves from each, see [Cross-Workflow Comparison](reports/cross-workflow-comparison.md).
 
 | Name | ★ | Workflow | <img src="!/tags/a.svg" height="14"> | <img src="!/tags/c.svg" height="14"> | <img src="!/tags/s.svg" height="14"> |
 |------|---|----------|---|---|---|
@@ -119,6 +119,7 @@ All major workflows converge on the same architectural pattern: **Research → P
 > *Note: yellow tags are sub-loops — steps that repeat inside a parent step (e.g. per task, per story, or until a verify condition passes).*
 
 ### Others
+- [Anthropic Official Workflow — **Explore → Plan → Code → Commit**](best-practice/claude-explore-plan-code-commit.md) [![Best Practice](!/tags/best-practice.svg)](best-practice/claude-explore-plan-code-commit.md) [Source](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [Cross-Model (Claude Code + Codex) Workflow](development-workflows/cross-model-workflow/cross-model-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/cross-model-workflow/cross-model-workflow.md)
 - [RPI](development-workflows/rpi/rpi-workflow.md) [![Implemented](!/tags/implemented.svg)](development-workflows/rpi/rpi-workflow.md)
 - [Ralph Wiggum Loop](https://www.youtube.com/watch?v=eAtvoGlpeRU) [![Implemented](!/tags/implemented.svg)](https://github.com/shanraisshan/ralph-wiggum-self-evolving-loop)
@@ -455,6 +456,7 @@ Repos primarily known as curated libraries of subagent definitions (`.claude/age
   <a href="reports/llm-day-to-day-degradation.md"><img src="https://img.shields.io/badge/LLM_Degradation-555?style=for-the-badge" alt="LLM Degradation"></a>
   <a href="reports/why-harness-is-important.md"><img src="https://img.shields.io/badge/Why_Harness_is_Important-555?style=for-the-badge" alt="Why Harness is Important"></a>
   <a href="reports/claude-spinner-verbs-and-tips.md"><img src="https://img.shields.io/badge/Spinner_Verbs_&_Tips-555?style=for-the-badge" alt="Spinner Verbs & Tips"></a>
+  <a href="reports/cross-workflow-comparison.md"><img src="https://img.shields.io/badge/Cross_Workflow_Comparison-555?style=for-the-badge" alt="Cross-Workflow Comparison"></a>
 </p>
 
 <p align="center">
