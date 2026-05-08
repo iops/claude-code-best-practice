@@ -63,15 +63,44 @@ Once VS Code is open, right-click its icon in the Dock → Options → Keep in D
 - Go to the Extensions view (click the square icon on the left sidebar or press `Cmd + Shift + X`)
 - Search for "Claude Code" and click Install on the extension by Anthropic
 
-**Clone the tutorial repo**
+**Install obsidian**
+- Go to https://obsidian.md/download
+- Click "Download for macOS"
+- Open the downloaded .dmg file and drag Obsidian to your Applications folder
+- Open Obsidian and create a new vault (e.g., "Claude Notes") in your Documents folder
+
+
+**Clone the karpathy skills CLAUDE.md**
 - Open Terminal
 - Run:
+  # Set up Andrej Karpathy skills - CLAUDE.md for all projects
+
+  ```bash
+  cd ~/.claude
+  mkdir ~/.claude/rules
+  mkdir -p ~/projects
+
+  echo "" >> CLAUDE.md
+  curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> CLAUDE.md
+
+  curl https://raw.githubusercontent.com/iops/product-mode/refs/heads/main/CLAUDE.md >> ~/projects/CLAUDE.md
+  ```
+
+  # Set up LLM wiki
+
+  ```bash
+  mkdir -p ~/wiki-root
+  claude
+  Help me set up a LLM wiki that fits my needs and workflows
+  https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+  ```
+  
+  # Clone the claude-best-practices repo
+
   ```bash
   mkdir -p ~/projects
   cd ~/projects
-  git clone https://github.com/anthropics/claude-code-best-practice.git
-  git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-  cd YOUR-REPO
-  code .
+  git clone https://github.com/iops/claude-code-best-practice.git
+  cd claude-code-best-practice
   ```
 Now head back to [README.md](README.md) for authentication setup.
